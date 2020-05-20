@@ -13,8 +13,10 @@
     </mat-header-cell>
     <mat-cell *cdkCellDef="let element">
       <mat-select>
-        <mat-option>TEST1</mat-option>
-        <mat-option>TEST2</mat-option>
+        <mat-option *ngFor='let obj of objects' [value] ="obj.value">
+          {{obj.value}}
+        </mat-option>
+
       </mat-select>
       <a class="cell-value">{{element[cindex]}}</a>
     </mat-cell>

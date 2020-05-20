@@ -3,6 +3,9 @@ import {MatTableDataSource} from '@angular/material/table';
 import {MatTableModule} from '@angular/material/table';
 import {MatSelectModule} from '@angular/material/select';
 
+interface Entry {
+  value: string;
+}
 
 export let SheetHeader = [
   ['        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ', '        '],
@@ -25,8 +28,9 @@ export let SheetHeader = [
 export class AppComponent {
   title = 'spread-sheets-app';
 
-  displayedColumns: string[] = [' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
-  objects: string[] = ['Ordinateur', 'Baie de brassage', 'Serveur', 'Base de données'];
+  displayedColumns: string[] = [' ', 'Produits', 'Nombre'];
+  objects: Entry[] = [
+    {value: 'Ordinateur'}, {value: 'Baie de brassage'}, {value: 'Serveur'}, {value : 'Base de données'} ];
   dataSource = new MatTableDataSource(SheetHeader);
 
 }
