@@ -1,27 +1,29 @@
-<mat-table [dataSource] = "dataSource" class = "mat-elevation-z8">
 
-  <ng-container matColumnDef=" ">
-    <mat-header-cell *matHeaderCellDef></mat-header-cell>
-    <mat-cell *matCellDef="let row; let rIndex = index;">
-      {{rIndex+1}}
-    </mat-cell>
-  </ng-container>
+  <mat-table [dataSource] = "dataSource" class = "mat-elevation-z8">
 
-  <ng-container *ngFor="let header of displayedColumns | slice:1:displayedColumns.length; index as cindex" [cdkColumnDef]="header">
-    <mat-header-cell *matHeaderCellDef>
-      <a class="header-value" >{{header}}</a>
-    </mat-header-cell>
-    <mat-cell *cdkCellDef="let element">
-      <mat-select>
-        <mat-option *ngFor='let obj of objects' [value] ="obj.value">
-          {{obj.value}}
-        </mat-option>
+    <ng-container matColumnDef=" ">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let row; let rIndex = index;">
+        {{rIndex+1}}
+      </mat-cell>
+    </ng-container>
 
-      </mat-select>
-      <a class="cell-value">{{element[cindex]}}</a>
-    </mat-cell>
-  </ng-container>
+    <ng-container *ngFor="let header of displayedColumns | slice:1:displayedColumns.length; index as cindex" [cdkColumnDef]="header">
+      <mat-header-cell *matHeaderCellDef>
+        <a class="header-value" >{{header}}</a>
+      </mat-header-cell>
+      <mat-cell *cdkCellDef="let element">
+        <mat-select>
+          <mat-option *ngFor='let obj of objects' [value] ="obj.value">
+            {{obj.value}}
+          </mat-option>
 
-  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-</mat-table>
+        </mat-select>
+        <a class="cell-value">{{element[cindex]}}</a>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+

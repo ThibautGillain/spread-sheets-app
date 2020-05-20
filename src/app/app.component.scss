@@ -13,17 +13,16 @@
     display: table;
     padding: 0;
     border: none;
-    width: 100%;
+    overflow-x:scroll;
     > .mat-header-row, > .mat-row {
       display: table-row;
       padding: 0 12px;
       border: 1px solid skyblue;
       min-height: 24px;
+      width: max-content;
       background-color: white;
       > .mat-header-cell {
-        display: table-cell;
         border: 1px solid rgba(0, 0, 0, 0.54);
-        padding: 0 0.5em;
         vertical-align: middle;
         text-align: center;
         color: rgba(0, 0, 0, 0.54);
@@ -31,15 +30,29 @@
         background-color: skyblue;
         border-bottom: 1px solid rgba(96, 96, 96, 0.12);
         cursor: auto;
+        word-wrap: initial;
+        display: table-cell;
+        padding: 0px 1em;
+        line-break: unset;
+        min-width: 10%;
+        white-space: nowrap;
+        overflow: hidden;
+        vertical-align: middle;
       }
       > .mat-cell {
-        display: table-cell;
         border: 1px solid skyblue;
-        padding: 0 0.5em;
         vertical-align: middle;
         text-align: center;
         color: black;
         font-size: 13px;
+        word-wrap: initial;
+        display: table-cell;
+        padding: 0px 10px;
+        line-break: unset;
+        min-width: 10%;
+        white-space: nowrap;
+        overflow: hidden;
+        vertical-align: middle;
        // border-bottom: 1px solid rgba(96, 96, 96, 0.12);
         cursor: auto;
       }
@@ -61,4 +74,12 @@
     &:hover {
       color: rgb(0, 105, 146)
     }
+
+  .window {
+    overflow-x:scroll;
+  }
+
+  .mat-select {
+    width : max-content;
+  }
   }
