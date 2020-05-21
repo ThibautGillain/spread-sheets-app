@@ -7,20 +7,8 @@ import {MatButtonModule} from '@angular/material/button';
 interface Entry {
   value: string;
 }
-/*
-export let SheetHeader = [
-  ['        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ', '        '],
-  ['        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ', '        '],
-  ['        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ', '        '],
-  ['        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ', '        '],
-  ['        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ', '        '],
-  ['        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ', '        '],
-  ['        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ', '        '],
-  ['        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ', '        '],
-  ['        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ', '        '],
-  ['        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ']
-];
-*/
+
+// Here you can choose the size of the spreadSheet
 export const inputColumns = 100;
 export const inputRows = 10;
 let SheetHeader = [];
@@ -33,8 +21,10 @@ let SheetHeader = [];
 export class AppComponent implements OnInit {
   title = 'spread-sheets-app';
 
-
+  // array containing the headers of the spreadsheet
   displayedColumns: string[] = [' '];
+
+  // Array of the dropdown values
   objects: Entry[] = [
                         {value: 'Ordinateur'},
                         {value: 'Baie de brassage'},
@@ -43,12 +33,12 @@ export class AppComponent implements OnInit {
                       ];
 
   dataSource: any;
-  defaultOption = "baie de brassage";
 
   constructor() {
 
   }
 
+  // This method initializes the spreadsheet with the right number of rows and columns.
   ngOnInit() {
     this.displayedColumns.push('Produits');
     this.displayedColumns.push('Quantité');
