@@ -1,4 +1,4 @@
-
+<div class="d-flex">
   <mat-table [dataSource] = "dataSource" class = "mat-elevation-z8">
 
     <ng-container matColumnDef=" ">
@@ -9,21 +9,21 @@
     </ng-container>
 
     <ng-container *ngFor="let header of displayedColumns | slice:1:displayedColumns.length; index as cindex" [cdkColumnDef]="header">
-      <mat-header-cell *matHeaderCellDef>
+      <th class="w-10" mat-header-cell *matHeaderCellDef style="width:50%;">
         <a class="header-value" >{{header}}</a>
-      </mat-header-cell>
-      <mat-cell *cdkCellDef="let element">
-        <mat-select>
+      </th>
+      <td class="w-10" mat-cell *cdkCellDef="let element">
+        <mat-select [value]="defaultOption" class="w-10">
           <mat-option *ngFor='let obj of objects' [value] ="obj.value">
             {{obj.value}}
           </mat-option>
 
         </mat-select>
         <a class="cell-value">{{element[cindex]}}</a>
-      </mat-cell>
+      </td>
     </ng-container>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </mat-table>
-
+</div>

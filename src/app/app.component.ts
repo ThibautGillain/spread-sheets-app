@@ -20,9 +20,10 @@ export let SheetHeader = [
   ['        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ', '        ']
 ];
 */
-export const inputColumns = 20;
+export const inputColumns = 100;
 export const inputRows = 10;
 let SheetHeader = [];
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -41,6 +42,7 @@ export class AppComponent implements OnInit {
                       ];
 
   dataSource: any;
+  defaultOption = "baie de brassage";
 
   constructor() {
 
@@ -51,10 +53,10 @@ export class AppComponent implements OnInit {
       this.displayedColumns.push('c' + j.toString());
     }
 
-    for(let i = 0; i < inputRows; i++) {
+    for (let i = 0; i < inputRows; i++) {
       let line = [];
       for (let j = 0 ; j < inputColumns ; j++) {
-        const column = ' ';
+        const column = '                       ';
         line.push(column);
       }
       SheetHeader.push(line);

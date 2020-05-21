@@ -10,37 +10,32 @@
 
 
   .mat-table {
-    display: table;
-    padding: 0;
-    border: none;
     overflow-x:scroll;
+    width: 100%;
+    table-layout:auto;
     > .mat-header-row, > .mat-row {
       display: table-row;
-      padding: 0 12px;
+      table-layout:auto;
       border: 1px solid skyblue;
-      min-height: 24px;
-      width: max-content;
       background-color: white;
       > .mat-header-cell {
         border: 1px solid rgba(0, 0, 0, 0.54);
+        table-layout:auto;
         vertical-align: middle;
         text-align: center;
         color: rgba(0, 0, 0, 0.54);
         font-size: 13px;
+
         background-color: skyblue;
         border-bottom: 1px solid rgba(96, 96, 96, 0.12);
         cursor: auto;
-        word-wrap: initial;
         display: table-cell;
-        padding: 0px 1em;
-        line-break: unset;
-        min-width: 10%;
-        white-space: nowrap;
-        overflow: hidden;
-        vertical-align: middle;
+        flex: 0 0 25% !important;
+        min-width: 15em !important;
       }
       > .mat-cell {
         border: 1px solid skyblue;
+        table-layout:auto;
         vertical-align: middle;
         text-align: center;
         color: black;
@@ -48,8 +43,10 @@
         word-wrap: initial;
         display: table-cell;
         padding: 0px 10px;
+
         line-break: unset;
-        min-width: 10%;
+        flex: 0 0 25% !important;
+        min-width: 15em !important;
         white-space: nowrap;
         overflow: hidden;
         vertical-align: middle;
@@ -61,6 +58,7 @@
 
   .header-value {
     font-weight: bold;
+    table-layout:auto;
     font-size: 1vw;
     color: rgba(0, 0, 0, 0.54);
     &:hover {
@@ -70,6 +68,7 @@
 
   .cell-value {
     color: black;
+    table-layout:auto;
     font-size: 0.8vw;
     &:hover {
       color: rgb(0, 105, 146)
@@ -81,5 +80,9 @@
 
   .mat-select {
     width : max-content;
+  }
+
+  .w-10 {
+    width:10% !important;
   }
   }
