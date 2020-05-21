@@ -14,7 +14,7 @@
       </th>
       <td class="w-10" mat-cell *cdkCellDef="let element">
         <span *ngIf="header === 'Produits'">
-          <mat-select [value]="defaultOption" class="w-10">
+          <mat-select class="w-10">
             <mat-option *ngFor='let obj of objects' [value] ="obj.value">
               {{obj.value}}
             </mat-option>
