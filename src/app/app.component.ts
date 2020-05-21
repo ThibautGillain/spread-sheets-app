@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatTableModule} from '@angular/material/table';
 import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
 
 interface Entry {
   value: string;
@@ -49,6 +50,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.displayedColumns.push('Produits');
+    this.displayedColumns.push('Quantité');
     for (let j = 1 ; j < inputColumns + 1 ; j++) {
       this.displayedColumns.push('c' + j.toString());
     }
