@@ -5,7 +5,7 @@ import * as Handsontable from 'handsontable';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['../css/handsontable.css']
 })
 export class AppComponent {
   title = 'spread-sheets-app';
