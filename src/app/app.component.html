@@ -6,6 +6,7 @@
     [minCols]="columnNumber"
     [colHeaders]="true"
     [rowHeaders]="true" licenseKey='non-commercial-and-evaluation'>
+      <hot-column title="Produits" type="dropdown" [source] = "productList"></hot-column>
       <hot-column *ngFor="let column of columns" title="{{column}}"></hot-column>
   </hot-table>
 </div>

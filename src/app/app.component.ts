@@ -13,18 +13,11 @@ export class AppComponent {
   columns = [];
   columnNumber = 10;
   rowNumber = 10;
-  dataset: any[] = [
-    {id: 1, name: 'Ted Right', address: 'Wall Street'},
-    {id: 2, name: 'Frank Honest', address: 'Pennsylvania Avenue'},
-    {id: 3, name: 'Joan Well', address: 'Broadway'},
-    {id: 4, name: 'Gail Polite', address: 'Bourbon Street'},
-    {id: 5, name: 'Michael Fair', address: 'Lombard Street'},
-    {id: 6, name: 'Mia Fair', address: 'Rodeo Drive'},
-    {id: 7, name: 'Cora Fair', address: 'Sunset Boulevard'},
-    {id: 8, name: 'Jack Right', address: 'Michigan Avenue'},
-  ];
+  dataset: any[] = [];
+  productList = ['Ordinateur', 'Serveur', 'Téléphone mobile', 'Baie de brassage'];
 
   ngOnInit() {
+    this.columns.push('Nombre');
     for (let i = 1 ; i <= this.columnNumber ; i++) {
       this.columns.push(i);
     }
